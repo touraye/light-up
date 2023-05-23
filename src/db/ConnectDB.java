@@ -19,4 +19,12 @@ public class ConnectDB {
         }
     }
 
+    public void createUser(String name, String phone, String email){
+        try {
+            String query = "INSERT INTO user(user_name, user_phone, user_email) VALUES('"+name+"', '"+phone+"', '"+email+"')";
+            this.statement.execute(query);
+        } catch (SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+    }
 }
